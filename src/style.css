@@ -1,0 +1,57 @@
+/* RESET */
+* { box-sizing: border-box; }
+body, html { margin: 0; padding: 0; height: 100%; }
+
+/* SITE STYLE */
+
+body {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 16px;
+  line-height: 1.75;
+  color: #111;
+  background-color: aliceblue;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: crimson;
+  box-shadow: 2px 0 4px #ccc;
+  border-bottom: 1px solid maroon;
+  font-size: 2em;
+}
+
+footer {
+  margin-top: auto;
+  border-top: 1px solid #ccc;
+}
+
+.loading-message {
+  font-size: 3em;
+}
+
+.spinner {
+  display: inline-block;
+  animation: spin 4s ease-out infinite;
+}
+
+@keyframes spin { 100% { transform: rotate(360deg); } }
+
+
+/* UTILITIES */
+
+.p-2 { padding: 2px; }
+.p-4 { padding: 4px; }
+.p-8 { padding: 8px; }
+
+.pt-2 { padding-top: 2px; } .pr-2 { padding-right: 2px; } .pb-2 { padding-bottom: 2px; } .pl-2 { padding-left: 2px; }
+.pt-4 { padding-top: 4px; } .pr-4 { padding-right: 4px; } .pb-4 { padding-bottom: 4px; } .pl-4 { padding-left: 4px; }
+.pt-8 { padding-top: 8px; } .pr-8 { padding-right: 8px; } .pb-8 { padding-bottom: 8px; } .pl-8 { padding-left: 8px; }
+
+.m-2 { margin: 2px; }
+.m-4 { margin: 4px; }
+.m-8 { margin: 8px; }
+
+.mt-2 { margin-top: 2px; } .mr-2 { margin-right: 2px; } .mb-2 { margin-bottom: 2px; } .ml-2 { margin-left: 2px; }
+.mt-4 { margin-top: 4px; } .mr-4 { margin-right: 4px; } .mb-4 { margin-bottom: 4px; } .ml-4 { margin-left: 4px; }
+.mt-8 { margin-top: 8px; } .mr-8 { margin-right: 8px; } .mb-8 { margin-bottom: 8px; } .ml-8 { margin-left: 8px; }

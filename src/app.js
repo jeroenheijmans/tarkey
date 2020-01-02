@@ -1,14 +1,21 @@
 (function() {
-  const appElement = document.getElementById("app");
+  const elements = ["app", "loading-message", "main"]
+    .reduce((obj, id) => {
+      obj[id] = document.getElementById(id);
+      obj.displayValues[id] = obj[id].style["display"] === "none" ? "block" : obj[id].style["display"];
+      return obj;
+    }, { displayValues: { } });
 
-  function delay(ms) {
-    return new Promise(r => setTimeout(r, ms));
-  }
-
+  const util = {
+    delay: ms => new Promise(r => setTimeout(r, ms)),
+    hide: el => el.style["display"] = "none",
+    show: el => el.style["display"] = elements.displayValues[el.id],
+  };
 
   async function bootstrap() {
-    await delay(2000);
-    appElement.innerHTML = "Done loading!";
+    await util.delay(300);
+    util.hide(elements["loading-message"]);
+    util.show(elements["main"]);
   }
   
   document.addEventListener("DOMContentLoaded", bootstrap);

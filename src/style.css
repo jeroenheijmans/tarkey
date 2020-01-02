@@ -1,8 +1,9 @@
 /* RESET */
+
 * { box-sizing: border-box; }
 body, html { margin: 0; padding: 0; height: 100%; }
 
-/* SITE STYLE */
+/* ELEMENTS STYLING */
 
 body {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -14,20 +15,33 @@ body {
   flex-direction: column;
 }
 
+button {
+  cursor: pointer;
+  color: #eee;
+  background-color: RoyalBlue;
+  border: 1px solid MidnightBlue;
+  box-shadow: 2px 2px 4px #aaa;
+  padding: 8px 18px;
+  font: inherit;
+}
+
 header {
   background-color: crimson;
-  box-shadow: 2px 0 4px #ccc;
   border-bottom: 1px solid maroon;
-  font-size: 2em;
+  box-shadow: 2px 0 4px #111;
+  font-size: 2rem;
 }
 
 footer {
   margin-top: auto;
-  border-top: 1px solid #ccc;
+  background-color: crimson;
+  border-top: 1px solid maroon;
+  box-shadow: -2px 0 4px #666;
+  font-size: 0.75rem;
 }
 
-.loading-message {
-  font-size: 3em;
+footer a {
+  color: #eee;
 }
 
 .spinner {
@@ -36,6 +50,26 @@ footer {
 }
 
 @keyframes spin { 100% { transform: rotate(360deg); } }
+
+#loading-message {
+  font-size: 3em;
+}
+
+#app {
+  height: 100%;
+}
+
+#main {
+  height: 100%;
+}
+
+#home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
 
 
 /* UTILITIES */

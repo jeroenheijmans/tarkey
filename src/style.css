@@ -25,6 +25,11 @@ button {
   font: inherit;
 }
 
+button.neutral {
+  background: lightslategray;
+  border-color: darkslategray;
+}
+
 header {
   background-color: crimson;
   border-bottom: 1px solid maroon;
@@ -33,15 +38,21 @@ header {
 }
 
 footer {
+  color: #eee;
   margin-top: auto;
   background-color: crimson;
   border-top: 1px solid maroon;
   box-shadow: -2px 0 4px #666;
   font-size: 0.75rem;
+  display: flex;
 }
 
 footer a {
   color: #eee;
+}
+
+footer span {
+  margin-left: auto;
 }
 
 .spinner {
@@ -63,12 +74,38 @@ footer a {
   height: 100%;
 }
 
-#home {
+#home, #session, #loading-message {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100%;
+}
+
+#current-card-keywords {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+}
+
+#current-card-keywords button {
+  margin-bottom: 8px;
+}
+
+button.correct {
+  background: ForestGreen;
+}
+
+button.incorrect { 
+  opacity: 0.33;
+}
+
+button.incorrect.chosen {
+  background: crimson;
+}
+
+#scores {
+  text-align: center;
 }
 
 

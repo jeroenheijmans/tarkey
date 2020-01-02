@@ -105,6 +105,7 @@ button.incorrect.chosen {
 }
 
 #scores {
+  opacity: 0.75;
   text-align: center;
 }
 

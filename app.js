@@ -155,7 +155,7 @@
   }
 
   function showScores(session) {
-    elements["scores"].innerHTML = `<span class="mr-8">✅ ${session.scores.correct}</span><span class="ml-8">❌ ${session.scores.incorrect}</span>`;
+    elements["scores"].innerHTML = `<span class="mr-8">💚 ${session.scores.correct}</span><span class="ml-8">❌ ${session.scores.incorrect}</span>`;
   }
 
   function next(session) {

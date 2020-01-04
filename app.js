@@ -35,7 +35,7 @@
       { "arcana": "minor", "number": 11, "suit": "wands", "name": "Page", "keywords": ["exploration", "excitement", "freedom"]},
       { "arcana": "minor", "number": 12, "suit": "wands", "name": "Knight", "keywords": ["action", "adventure", "fearlessness"]},
       { "arcana": "minor", "number": 13, "suit": "wands", "name": "Queen", "keywords": ["courage", "determination", "joy"]},
-      { "arcana": "minor", "number": 14, "suit": "wands", "name": "King", "keywords": ["big picture", "leader,overcoming challenges"]},
+      { "arcana": "minor", "number": 14, "suit": "wands", "name": "King", "keywords": ["big picture", "leader", "overcoming challenges"]},
       { "arcana": "minor", "number": 1, "suit": "cups", "name": "Ace", "keywords": ["feelings", "spirituality", "intuition"]},
       { "arcana": "minor", "number": 2, "suit": "cups", "name": "Two", "keywords": ["unity", "partnership", "connection"]},
       { "arcana": "minor", "number": 3, "suit": "cups", "name": "Three", "keywords": ["friendship", "community", "happiness"]},

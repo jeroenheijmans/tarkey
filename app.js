@@ -90,8 +90,7 @@
       "start-session",
       "home",
       "session",
-      "current-card",
-      "current-card-keywords",
+      "current-card-title",
       "answer-0",
       "answer-1",
       "answer-2",
@@ -159,10 +158,10 @@
   }
 
   function next(session) {
-    elements["current-card"].innerHTML = `<h2>${util.formatCardText(session.currentCard)}</h2>`;
+    elements["current-card-title"].innerHTML = util.formatCardText(session.currentCard);
 
     correct = util.pickRandom(session.currentCard.keywords);
-    fakes = util.pickRandomsWithBlacklist(session.allKeywords, 3, [correct]);
+    fakes = util.pickRandomsWithBlacklist(session.allKeywords, 3, session.currentCard.keywords);
     
     util.shuffle([...fakes, correct])
       .forEach((keyword, i) => {
@@ -214,6 +213,7 @@
   async function bootstrap() {
     await util.delay(1000);
     util.hide(elements["loading-message"]);
+    util.hide(elements["session"]);
     util.show(elements["main"]);
     elements["start-session"].addEventListener("click", startSession)
   }

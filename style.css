@@ -91,6 +91,10 @@ button.incorrect.chosen {
   text-align: center;
 }
 
+#current-card-face-wrapper {
+  margin: auto;
+}
+
 #controls {
   margin-top: auto;
   padding: 8px;

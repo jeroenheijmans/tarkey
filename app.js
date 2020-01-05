@@ -97,6 +97,8 @@
       "answer-3",
       "next",
       "scores",
+      "current-card-face",
+      "sprite",
     ]
     .reduce((obj, id) => {
       obj[id] = document.getElementById(id);
@@ -142,6 +144,8 @@
       : `${card.name} of ${card.suit}`,
   };
 
+  const cardCanvasContext = elements["current-card-face"].getContext("2d");
+  let cardSprite = elements["sprite"]
   let currentSession = null;
   const answerButtons = [elements["answer-0"], elements["answer-1"], elements["answer-2"], elements["answer-3"]];
 
@@ -157,8 +161,30 @@
     elements["scores"].innerHTML = `<span class="mr-8">💚 ${session.scores.correct}</span><span class="ml-8">❌ ${session.scores.incorrect}</span>`;
   }
 
+  function showCard(card) {
+    elements["current-card-title"].innerHTML = util.formatCardText(card);
+
+    let yOffset = 0;
+    switch (card.suit) {
+      case "wands": yOffset = 602 * 1; break;
+      case "cups": yOffset = 602 * 2; break;
+      case "swords": yOffset = 602 * 3; break;
+      case "pentacles": yOffset = 602 * 4; break;
+    }
+
+    let xOffset = (card.arcana === "major" ? card.number : card.number - 1) * 352;
+
+    cardCanvasContext.drawImage(
+      cardSprite,
+      xOffset, yOffset, // Source offset
+      350, 600, // Source size
+      0, 0, // Destination offset
+      175, 300, // Destination size
+    );
+  }
+
   function next(session) {
-    elements["current-card-title"].innerHTML = util.formatCardText(session.currentCard);
+    showCard(session.currentCard);
 
     correct = util.pickRandom(session.currentCard.keywords);
     fakes = util.pickRandomsWithBlacklist(session.allKeywords, 3, session.currentCard.keywords);

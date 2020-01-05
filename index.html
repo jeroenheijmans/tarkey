@@ -10,6 +10,7 @@
     <script defer src="app.js?v=0.6.0"></script>
   </head>
   <body class="d-flex-column">
+    <div style="display: none;"><img src="card-sprites-001.png" id="sprite"></div>
     <header class="p-4">
       🃏 TarKey Beta
     </header>
@@ -24,6 +25,9 @@
         </div>
         <div id="session" class="d-flex-column">
           <div id="current-card-title"></div>
+          <div id="current-card-face-wrapper">
+            <canvas id="current-card-face" width="175" height="300"></canvas>
+          </div>
           <div id="controls">
             <div id="answers">
               <button id="answer-0">Answer 1</button>

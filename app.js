@@ -98,7 +98,6 @@
       "next",
       "scores",
       "current-card-face",
-      "sprite",
     ]
     .reduce((obj, id) => {
       obj[id] = document.getElementById(id);
@@ -144,11 +143,6 @@
       : `${card.name} of ${card.suit}`,
   };
 
-  const [cardWidth, cardHeight] = [140, 240];
-  elements["current-card-face"].width = cardWidth;
-  elements["current-card-face"].height = cardHeight;
-  const cardCanvasContext = elements["current-card-face"].getContext("2d");
-  let cardSprite = elements["sprite"]
   let currentSession = null;
   const answerButtons = [elements["answer-0"], elements["answer-1"], elements["answer-2"], elements["answer-3"]];
 
@@ -166,7 +160,7 @@
 
   function showCard(card) {
     elements["current-card-title"].innerHTML = util.formatCardText(card);
-
+    
     let yOffset = 0;
     switch (card.suit) {
       case "wands": yOffset = 602 * 1; break;
@@ -177,13 +171,7 @@
 
     let xOffset = (card.arcana === "major" ? card.number : card.number - 1) * 352;
 
-    cardCanvasContext.drawImage(
-      cardSprite,
-      xOffset, yOffset, // Source offset
-      350, 600, // Source size
-      0, 0, // Destination offset
-      cardWidth, cardHeight, // Destination size
-    );
+    elements["current-card-face"].style["object-position"] = `-${xOffset/2}px -${yOffset/2}px`;
   }
 
   function next(session) {

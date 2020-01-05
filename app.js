@@ -144,6 +144,9 @@
       : `${card.name} of ${card.suit}`,
   };
 
+  const [cardWidth, cardHeight] = [140, 240];
+  elements["current-card-face"].width = cardWidth;
+  elements["current-card-face"].height = cardHeight;
   const cardCanvasContext = elements["current-card-face"].getContext("2d");
   let cardSprite = elements["sprite"]
   let currentSession = null;
@@ -179,7 +182,7 @@
       xOffset, yOffset, // Source offset
       350, 600, // Source size
       0, 0, // Destination offset
-      175, 300, // Destination size
+      cardWidth, cardHeight, // Destination size
     );
   }
 

@@ -33,7 +33,7 @@ header {
   background-color: crimson;
   border-bottom: 1px solid maroon;
   box-shadow: 2px 0 4px #111;
-  font-size: 2rem;
+  font-size: 1.25rem;
 }
 
 footer {
@@ -42,7 +42,7 @@ footer {
   background-color: crimson;
   border-top: 1px solid maroon;
   box-shadow: -2px 0 4px #666;
-  font-size: 0.75rem;
+  font-size: 0.65rem;
 }
 
 footer a {

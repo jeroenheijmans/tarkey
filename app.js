@@ -1,4 +1,5 @@
 (function() {
+  const deckImagesFolder = "/decks/rider-waite";
   const cards = [
       { "arcana": "major", "number": 0, "name": "The Fool", "keywords": ["innocence", "new beginnings", "free spirit"]},
       { "arcana": "major", "number": 1, "name": "The Magician", "keywords": ["willpower", "desire", "creation", "manifestation"]},
@@ -91,13 +92,14 @@
       "home",
       "session",
       "current-card-title",
+      "current-card-face",
+      "current-card-face-wrapper",
       "answer-0",
       "answer-1",
       "answer-2",
       "answer-3",
       "next",
       "scores",
-      "current-card-face",
     ]
     .reduce((obj, id) => {
       obj[id] = document.getElementById(id);
@@ -141,6 +143,19 @@
     formatCardText: card => card.arcana === "major"
       ? card.name
       : `${card.name} of ${card.suit}`,
+    cardImgSrc: card => {
+      const nr = card.number.toString().padStart(2, "0");
+      const suit = card.suit ? card.suit + "-" : "";
+      return `${deckImagesFolder}/${card.arcana}-${suit}${nr}.jpg`;
+    },
+    addPrefetch(card) {
+      // Not yet working in Chrome, see: https://stackoverflow.com/q/59618351/419956
+      const link = document.createElement("link");
+      link.rel = "prefetch";
+      link.as = "image";
+      link.href = this.cardImgSrc(card);
+      document.head.append(link);
+    },
   };
 
   let currentSession = null;
@@ -159,19 +174,10 @@
   }
 
   function showCard(card) {
-    elements["current-card-title"].innerHTML = util.formatCardText(card);
-    
-    let yOffset = 0;
-    switch (card.suit) {
-      case "wands": yOffset = 602 * 1; break;
-      case "cups": yOffset = 602 * 2; break;
-      case "swords": yOffset = 602 * 3; break;
-      case "pentacles": yOffset = 602 * 4; break;
-    }
-
-    let xOffset = (card.arcana === "major" ? card.number : card.number - 1) * 352;
-
-    elements["current-card-face"].style["object-position"] = `-${xOffset/2}px -${yOffset/2}px`;
+    const cardText = util.formatCardText(card);
+    elements["current-card-title"].innerHTML = cardText;
+    elements["current-card-face"].alt = `Deck image for ${cardText}`;
+    elements["current-card-face"].style["background-image"] = `url("${util.cardImgSrc(card)}")`;
   }
 
   function next(session) {
@@ -228,6 +234,7 @@
   }
 
   async function bootstrap() {
+    cards.forEach(c => util.addPrefetch(c));
     await util.delay(1000);
     util.hide(elements["loading-message"]);
     util.hide(elements["session"]);

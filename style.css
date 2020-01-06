@@ -86,21 +86,21 @@ button.incorrect.chosen {
 }
 
 #current-card-title {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: bold;
   text-align: center;
 }
 
 #current-card-face-wrapper {
-  margin: auto;
-  overflow: hidden;
-  height: 300px;
-  width: 175px;
+  flex: 1;
 }
 
 #current-card-face {
-  width: 3872px;
-  height: 1505px;
+  height: 100%;
+  width: 100%;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 #controls {

@@ -2,13 +2,13 @@
 
 ## Sprites
 
-The file `card-sprites-002.jpg` was generated using the "Rider-Waite Tarot Deck" images as found on Wikipedia, where there is also an explanation of the Copyright status and usage rights: https://en.wikipedia.org/wiki/Rider-Waite_tarot_deck#Copyright_status with the summary from the card The Fool https://en.wikipedia.org/wiki/File:RWS_Tarot_00_Fool.jpg explaining:
+The files in the `/decks/rider-waite` folder are the "Rider-Waite Tarot Deck" images as found on Wikipedia, where there is also an explanation of the Copyright status and usage rights: https://en.wikipedia.org/wiki/Rider-Waite_tarot_deck#Copyright_status with the summary from the card The Fool https://en.wikipedia.org/wiki/File:RWS_Tarot_00_Fool.jpg explaining:
 
 > No longer under copyright in US (and arguably not in the UK either).
 
 ## Code
 
-All files other than `card-sprites-002.jpg` fall under the following MIT License:
+All files except those in `/decks/**` under the following MIT License:
 
 Copyright 2020, Jeroen Heijmans, Merije Vink
 

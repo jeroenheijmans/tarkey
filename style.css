@@ -73,6 +73,12 @@ footer span {
   align-items: center;
 }
 
+#session {
+  /* Makes it somewhat reasonable on desktop: */
+  max-width: 500px;
+  margin: auto;
+}
+
 button.correct {
   background: ForestGreen;
 }

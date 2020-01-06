@@ -1,5 +1,5 @@
 (function() {
-  const deckImagesFolder = "/decks/rider-waite";
+  const deckImagesFolder = "./decks/rider-waite";
   const cards = [
       { "arcana": "major", "number": 0, "name": "The Fool", "keywords": ["innocence", "new beginnings", "free spirit"]},
       { "arcana": "major", "number": 1, "name": "The Magician", "keywords": ["willpower", "desire", "creation", "manifestation"]},
